@@ -1,0 +1,223 @@
+/* PALETA: ALTERE AS CORES AQUI */
+:root {
+    --principal: #C62828;
+    /* Vermelho: cabeçalho, botão e preços */
+    --hover: #9B1C1C;
+    /* Vermelho escuro: botão ao passar o mouse */
+    --fundo: #FFF5F5;
+    /* Rosa claro: fundo da página */
+    --card: #FFFFFF;
+    /* Branco: fundo dos cards */
+    --texto: #333333;
+    /* Cinza escuro: textos */
+    --texto-claro: #FFFFFF;
+    /* Branco: texto sobre vermelho */
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+    background: var(--fundo);
+    color: var(--texto);
+    text-align: center;
+}
+
+header,
+footer {
+    background: var(--principal);
+    color: var(--texto-claro);
+    padding: 10px;
+}
+
+header h1 {
+    margin: 7px 0 0;
+    font-size: 24px;
+}
+
+.redes {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 22px;
+}
+
+.redes a {
+    color: var(--texto-claro);
+    font-size: 19px;
+}
+
+.redes a:hover {
+    opacity: 0.75;
+}
+
+/* O cardápio fica à esquerda e o pedido à direita. */
+main {
+    width: 100%;
+    max-width: 1700px;
+    margin: 0 auto;
+    padding: 18px 22px;
+    flex: 1;
+}
+
+.layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 285px;
+    gap: 20px;
+    align-items: start;
+}
+
+.produtos h2 {
+    font-size: 20px;
+    margin: 0 0 12px;
+}
+
+.produtos h2:not(:first-child) {
+    margin-top: 22px;
+}
+
+/* Quatro lanches na primeira linha. */
+.cardapio {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 14px;
+}
+
+/* Três bebidas na segunda linha. */
+.cardapio:last-child {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.produto {
+    background: var(--card);
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 2px 8px #00000012;
+}
+
+/* contain mantém a imagem inteira, sem cortar. */
+.produto img {
+    display: block;
+    width: 100%;
+    height: 155px;
+    object-fit: contain;
+}
+
+.produto h3 {
+    margin: 10px 0 7px;
+    font-size: 17px;
+}
+
+.produto p {
+    margin: 7px 0;
+    color: var(--principal);
+    font-weight: bold;
+}
+
+.produto label {
+    display: block;
+    margin: 10px 0 5px;
+    font-size: 14px;
+}
+
+.produto input {
+    width: 85px;
+    max-width: 100%;
+    padding: 7px;
+    border: 1px solid var(--principal);
+    border-radius: 6px;
+    font-size: 15px;
+    text-align: center;
+}
+
+/* Resumo alinhado com o início dos cards, na direita. */
+.pedido {
+    margin-top: 34px;
+    background: var(--card);
+    border-radius: 10px;
+    padding: 18px;
+    text-align: left;
+    box-shadow: 0 2px 8px #00000012;
+    position: sticky;
+    top: 14px;
+}
+
+.pedido h2 {
+    margin: 0 0 8px;
+    color: var(--principal);
+}
+
+.pedido p {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.pedido button {
+    width: 100%;
+}
+
+#resumo {
+    white-space: pre-line;
+    overflow-wrap: anywhere;
+    line-height: 1.6;
+    margin-top: 12px;
+    font-size: 14px;
+}
+
+button {
+    background: var(--principal);
+    color: var(--texto-claro);
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+button:hover {
+    background: var(--hover);
+}
+
+footer {
+    font-size: 12px;
+}
+
+/* Em telas menores, os cards se reorganizam. */
+@media (max-width: 1100px) {
+    .layout {
+        grid-template-columns: minmax(0, 1fr) 240px;
+    }
+
+    .cardapio {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .cardapio:last-child {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 750px) {
+    .layout {
+        grid-template-columns: 1fr;
+    }
+
+    .pedido {
+        position: static;
+        margin-top: 0;
+    }
+
+    .cardapio:last-child {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    main {
+        padding: 12px;
+    }
+}

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Lanchonete SENAI</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="style.css" rel="stylesheet" />
+    <link rel="icon" href="img/xtudo.png" type="image/png" />
+</head>
+
+<body>
+    <header>
+        <div class="redes">
+            <a aria-label="Portfólio" href="https://sammyfreitas.github.io/portfolio/">
+                <i class="fas fa-globe"></i>
+            </a>
+            <a aria-label="WhatsApp" href="https://wa.me/5521975287327"><i class="fab fa-whatsapp"></i></a>
+            <a aria-label="LinkedIn" href="https://www.linkedin.com/in/tony-s-freitas/"><i
+                    class="fab fa-linkedin"></i></a>
+            <a aria-label="Instagram" href="https://www.instagram.com/anthony_tijuduke/"><i
+                    class="fab fa-instagram"></i></a>
+            <a aria-label="E-mail" href="mailto:tonysdefreitas@gmail.com"><i class="far fa-envelope"></i></a>
+            <a aria-label="GitHub" href="https://github.com/sammyfreitas"><i class="fab fa-github"></i></a>
+        </div>
+        <h1>Lanchonete SENAI</h1>
+    </header>
+    <main>
+        <div class="layout">
+            <section class="produtos">
+                <h2>Escolha seus lanches</h2>
+                <div class="cardapio">
+                    
+                    <div class="produto">
+                        <img alt="Foto do x-búrguer" src="img/xburguer.png" />
+                        <h3>X-Búrguer</h3>
+                        <p>R$ 16,00</p>
+                        <label for="xburguer">Quantidade:</label>
+                        <input id="xburguer" min="0" step="1" type="number" value="0" />
+                    </div>
+
+                    <div class="produto">
+                        <img alt="Foto do X-Tudo" src="img/xtudo.png" />
+                        <h3>X-Tudo</h3>
+                        <p>R$ 22,00</p>
+                        <label for="xtudo">Quantidade:</label>
+                        <input id="xtudo" min="0" step="1" type="number" value="0" />
+                    </div>
+
+                    <div class="produto">
+                        <img alt="Foto do cachorro-quente" src="img/hotdog.png" />
+                        <h3>Cachorro-quente</h3>
+                        <p>R$ 10,00</p>
+                        <label for="cachorro">Quantidade:</label>
+                        <input id="cachorro" min="0" step="1" type="number" value="0" />
+                    </div>
+                    
+                    <div class="produto">
+                        <img alt="Foto da batata frita" src="img/batatafrita.png" />
+                        <h3>Batata frita</h3>
+                        <p>R$ 8,00</p>
+                        <label for="batata">Quantidade:</label>
+                        <input id="batata" min="0" step="1" type="number" value="0" />
+                    </div>
+                </div>
+                <h2>Escolha suas bebidas</h2>
+                <div class="cardapio">
+                    <div class="produto">
+                        <img alt="Foto do refrigerante" src="img/refrigerante.png" />
+                        <h3>Refrigerante</h3>
+                        <p>R$ 7,00</p>
+                        <label for="refrigerante">Quantidade:</label>
+                        <input id="refrigerante" min="0" step="1" type="number" value="0" />
+                    </div>
+                    <div class="produto">
+                        <img alt="Foto do Guaravita" src="img/guaravita.png" />
+                        <h3>Guaravita</h3>
+                        <p>R$ 3,00</p>
+                        <label for="guaravita">Quantidade:</label>
+                        <input id="guaravita" min="0" step="1" type="number" value="0" />
+                    </div>
+                    <div class="produto">
+                        <img alt="Foto da água" src="img/agua.png" />
+                        <h3>Água</h3>
+                        <p>R$ 4,00</p>
+                        <label for="agua">Quantidade:</label>
+                        <input id="agua" min="0" step="1" type="number" value="0" />
+                    </div>
+                </div>
+            </section>
+            <aside class="pedido">
+                <h2>Seu pedido</h2>
+                <p>Escolha as quantidades dos produtos e clique para calcular.</p><button
+                    onclick="calcularPedido()">Calcular pedido</button>
+                <div aria-live="polite" id="resumo"></div>
+            </aside>
+        </div>
+    </main>
+    <footer>Desenvolvido por Nome do Aluno | 2026 | Curso Programador FrontEnd SENAI</footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
